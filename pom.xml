@@ -8,9 +8,38 @@
     <artifactId>javalite-jte-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <packaging>war</packaging>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.17.v20190418</version>
+                <configuration>
+                    <httpConnector>
+                        <port>8082</port>
+                    </httpConnector>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.javalite</groupId>
+            <artifactId>activeweb</artifactId>
+            <version>2.4-j8</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
