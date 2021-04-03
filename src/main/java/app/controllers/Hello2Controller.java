@@ -19,15 +19,15 @@ public class Hello2Controller extends AppController {
     }
 
     public HttpBuilder world2() {
-        HelloController.HelloPage page = new HelloController.HelloPage(); // this does not work
-        page.userName = "admin";
+        Hello2Controller.HelloPage page = new Hello2Controller.HelloPage(); // this does not work
+        page.userName = "Bob";
         page.userKarma = 1337;
 
         return respond(JTE.render("hello2/hello.jte", page));
     }
 
-
-
-
-
+    public static class HelloPage {
+        public String userName;
+        public int userKarma;
+    }
 }

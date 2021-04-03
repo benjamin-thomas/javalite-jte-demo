@@ -1,4 +1,4 @@
-@param app.controllers.HelloController.HelloPage page
+@param app.controllers.Hello2Controller.HelloPage page
 
 <p>
     Hello ${page.userName}!!

@@ -9,19 +9,14 @@ public class HelloController extends AppController {
     }
 
     public HttpBuilder world() {
-        return respond("Hello2 world from HelloController#world!");
+        return respond("Hello world from HelloController#world! Now go to /hello/world2");
     }
 
     public HttpBuilder world2() {
         app.HelloPage page = new app.HelloPage(); // this works
-        page.userName = "admin";
-        page.userKarma = 1337;
+        page.userName = "John";
 
         return respond(JTE.render("hello/hello.jte", page));
     }
 
-    public static class HelloPage {
-        public String userName;
-        public int userKarma;
-    }
 }
