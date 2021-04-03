@@ -27,8 +27,8 @@ public class HelloController extends AppController {
         // Render
         var output = new StringOutput();
         System.out.println("---> before render");
-        templateEngine.render("hello.jte", "World", output);
-        System.out.println("---> after render (this does not execute)");
+        templateEngine.render("hello.jte", "World2", output);
+        System.out.println("---> after render");
         return respond(output.toString()); // not sure if that'll work
     }
 }

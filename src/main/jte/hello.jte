@@ -1,3 +1,3 @@
-@param String name2
-Hello ${name2}!
+@param String name
+Hello ${name}!!
 The current timestamp is ${System.currentTimeMillis()}.

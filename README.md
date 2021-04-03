@@ -2,9 +2,10 @@
 
 ## Run as
 
-    sdk use java 11.0.10.9.1-amzn
-    mvn jetty:run
+Exec `/src/main/java/app/Main.java` from the IDE.
+Then go to: http://localhost:8083
 
+Requires Java 11 since JTE requires it. Uses javalite 3.0-j11-SNAPSHOT.
 
 ## Note to self
 
