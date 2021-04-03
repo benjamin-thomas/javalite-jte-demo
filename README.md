@@ -24,5 +24,5 @@ ActiveWeb expects to find those packages:
 
 - / 
 - /hello 
-- /hello/world 
-- /hello/world2 
+- /hello/fm 
+- /hello/jte 
