@@ -1,17 +1,9 @@
-@param app.HelloPage page
+@param app.controllers.HelloController.HelloPage page
 
 <p>
-    Hello ${page.userName}!!
+    Hello, this is ${page.getName()}, age: ${page.getAge()}
 </p>
 
 <p>
     The current timestamp is ${System.currentTimeMillis()}.
-</p>
-
-<p>
-    This is a JTE Template.
-</p>
-
-<p>
-    Now go to /hello2/world2 (causes failure)
 </p>

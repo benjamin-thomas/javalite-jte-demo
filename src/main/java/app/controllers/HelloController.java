@@ -12,11 +12,36 @@ public class HelloController extends AppController {
         return respond("Hello world from HelloController#world! Now go to /hello/world2");
     }
 
-    public HttpBuilder world2() {
-        app.HelloPage page = new app.HelloPage(); // this works
-        page.userName = "John";
-
-        return respond(JTE.render("hello/hello.jte", page));
+    public HttpBuilder loader() {
+        return respond(getClass().getClassLoader().toString());
     }
+
+    public HttpBuilder world2() {
+        var page = new HelloPage("John", 101);
+        return respond(JTE.render("hello/hello.jte", page, getClass().getClassLoader()));
+    }
+
+    public class HelloPage {
+        private final String name;
+        private final int age;
+
+        public HelloPage(String name, int age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public String getUserName() {
+            return name;
+        }
+    }
+
 
 }
