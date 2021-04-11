@@ -8,10 +8,13 @@
     Hello, this is ${page.getName()}, age: ${page.getAge()}
 </p>
 
+<#if false>
+
 <h3>Access values with Freemarker trickery</h3>
 <p>
-    Hello, this is ${page.name}, age: ${page.age}
+    Hello, this is ${page.nme}, age: ${page.age}
 </p>
+</#if>
 
 <hr>
 

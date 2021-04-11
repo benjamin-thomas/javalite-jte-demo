@@ -1,0 +1,23 @@
+{namespace app.simple}
+
+{template .helloWorld}
+  Hello world2!
+{/template}
+
+/** Greets a person using "Hello" by default. */
+{template .helloName}
+  {@param age: int}
+  {@param name: string} /** The person's name. */
+  {@param? greetingWord: string} /**
+                                  * Optional greeting word to use
+                                  * instead of "Hello".
+                                  */
+  {if false}
+
+  <h3>Demo</h3>
+    Hello {$name}!! Your age is: {$age + 3}
+    <pre style="color:red">HTML works fine and autocompletion ok via IDE</pre>
+  {else}
+    {$greetingWord} {$name}!!! Your age is: {$age}
+  {/if}
+{/template}

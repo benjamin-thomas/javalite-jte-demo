@@ -13,6 +13,7 @@ public class Main {
         System.out.println("Enabling active reload (recompiles controllers)");
         System.setProperty("active_reload", "true");
 
+        // Main.class.getResource("simple.soy")
         WebAppContext webapp = new WebAppContext("src/main/webapp", "/");
         webapp.addAliasCheck(new AllowSymLinkAliasChecker());
         server.setHandler(webapp);

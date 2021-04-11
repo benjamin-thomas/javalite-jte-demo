@@ -3,9 +3,12 @@
 <h1>${data.getPageTitle()}</h1>
 
 <h2>Access values with normal getters</h2>
+@if(false)
+    <h3>Test</h3>
 <p>
     Hello, this is ${data.getName()}, age: ${data.getAge()}
 </p>
+@endif
 
 <hr>
 

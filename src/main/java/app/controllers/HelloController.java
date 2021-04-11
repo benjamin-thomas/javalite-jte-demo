@@ -1,7 +1,13 @@
 package app.controllers;
 
+import app.Main;
 import app.utils.JTE;
+import com.google.template.soy.SoyFileSet;
+import com.google.template.soy.tofu.SoyTofu;
 import org.javalite.activeweb.AppController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class HelloController extends AppController {
     public static String indexPath = "/hello";
@@ -20,6 +26,34 @@ public class HelloController extends AppController {
     public HttpBuilder jte() {
         var page = new JteDataBag("John", 101, "Hello JTE");
         return respond(JTE.render("hello/hello.jte", page, getClass().getClassLoader()));
+    }
+
+    public HttpBuilder soy() {
+        // https://github.com/google/closure-templates/blob/master/documentation/codelabs/helloworlds/helloworld_java.md
+        SoyFileSet sfs = SoyFileSet
+                .builder()
+                .add(Main.class.getResource("simple.soy"))
+                .build();
+        SoyTofu tofu = sfs.compileToTofu();
+        final String rendered = tofu.newRenderer("app.simple.helloWorld").render();
+        System.out.println(rendered);
+        return respond(rendered);
+    }
+
+    public HttpBuilder soy2() {
+        // https://github.com/google/closure-templates/blob/master/documentation/codelabs/helloworlds/helloworld_java.md
+        SoyFileSet sfs = SoyFileSet
+                .builder()
+                .add(Main.class.getResource("simple.soy"))
+                .build();
+        SoyTofu tofu = sfs.compileToTofu();
+        // helloName
+        Map<String, Object> data = new HashMap<>();
+        data.put("name", "Michael");
+        data.put("age", 98);
+        final String rendered = tofu.newRenderer("app.simple.helloName").setData(data).render();
+        System.out.println(rendered);
+        return respond(rendered);
     }
 
     public static class ViewUser {
